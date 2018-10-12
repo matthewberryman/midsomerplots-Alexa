@@ -13,7 +13,7 @@
         {
           "name": "ItemsIntent",
           "samples": [
-            "to search items for {keyword}"
+            "search items {keyword}"
           ],
           "slots": [
             {
@@ -25,7 +25,7 @@
         {
           "name": "PeopleIntent",
           "samples": [
-            "to search people for {keyword}"
+            "search people {keyword}"
           ],
           "slots": [
             {
