@@ -63,6 +63,7 @@ const ItemsHandler = {
         return request.type === 'IntentRequest' && request.intent.name === 'ItemsIntent';
     },
     handle(handlerInput) {
+        console.log('running items handler');
         const request = handlerInput.requestEnvelope.request;
         const responseBuilder = handlerInput.responseBuilder;
 
@@ -70,6 +71,7 @@ const ItemsHandler = {
         if (request.intent.slots.keyword.value && request.intent.slots.keyword.value !== "?") {
             searchTerm = request.intent.slots.keyword.value;
         }
+        console.log('searching for ' + searchTerm);
 
         const result = searchItems(searchTerm);
 
@@ -241,7 +243,7 @@ const FALLBACK_REPROMPT = 'What can I help you with?';
 
 // 3. Helper Functions ==========================================================================
 
-const getItems = (searchTerm) => {
+const searchItems = (searchTerm) => {
 
   let request = {
     url: 'https://tba21-api.acrossthecloud.net/items',
@@ -275,7 +277,7 @@ const getItems = (searchTerm) => {
     });
 };
 
-const getPeople = (searchTerm) => {
+const searchPeople = (searchTerm) => {
   let request = {
     url: 'https://tba21-api.acrossthecloud.net/people',
     headers: {
@@ -287,6 +289,7 @@ const getPeople = (searchTerm) => {
 
   axios(signedRequest)
     .then((response) => { // tslint:disable-line: no-any
+      console.log(response);
       const result = response.Items.filter(
         item => {
           if (item.name.toLowerCase().includes(term.toLowerCase())) {
