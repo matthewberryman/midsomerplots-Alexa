@@ -234,7 +234,7 @@ const languageStrings = {
     }
 };
 
-const SKILL_NAME = 'ocean archive';
+const SKILL_NAME = 'archive';
 const FALLBACK_MESSAGE = `The ${SKILL_NAME} can\'t help you with that.  You can ask me to search for people and items in the archive. What can I help you with?`;
 const FALLBACK_REPROMPT = 'What can I help you with?';
 
