@@ -227,7 +227,7 @@ const languageStrings = {
     en: {
         translation: {
             WELCOME: 'Welcome to the Ocean Archive!',
-            HELP: 'Say about, or say Alexa ask archive to search people for keyword, or say Alexa ask archive to search items for keyword.',
+            HELP: 'Say about, or say Alexa ask archive to search items for keyword.',
             ABOUT: 'The Ocean Archive is an archive of ocean artefacts developed by the TBA21 Academy in collaboration with USER Group and Across the Cloud.',
             STOP: 'Okay, see you next time!',
         },
@@ -328,7 +328,6 @@ exports.handler = skillBuilder
         LaunchHandler,
         AboutHandler,
         ItemsHandler,
-        PeopleHandler,
         HelpHandler,
         StopHandler,
         FallbackHandler,

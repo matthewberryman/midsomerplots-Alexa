@@ -13,19 +13,8 @@
         {
           "name": "ItemsIntent",
           "samples": [
-            "search items {keyword}"
-          ],
-          "slots": [
-            {
-              "name": "keyword",
-              "type": "AMAZON.SearchQuery"
-            }
-          ]
-        },
-        {
-          "name": "PeopleIntent",
-          "samples": [
-            "search people {keyword}"
+            "search items for {keyword}",
+            "search for {keyword}"
           ],
           "slots": [
             {
