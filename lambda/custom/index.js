@@ -13,21 +13,8 @@
 const Alexa = require('ask-sdk-core');
 const i18n = require('i18next');
 const sprintf = require('i18next-sprintf-postprocessor');
-const https = require('https');
-const Amplify = require('aws-amplify');
-const config = require('./config');
-
-Amplify.configure({
-  API: {
-    endpoints: [
-      {
-        name: 'tba21',
-        endpoint: config.apiGateway.URL,
-        region: config.apiGateway.REGION
-      },
-    ]
-  }
-});
+const axios = require('axios');
+const aws4 = require('aws4');
 
 // 1. Handlers ===================================================================================
 
@@ -255,7 +242,17 @@ const FALLBACK_REPROMPT = 'What can I help you with?';
 // 3. Helper Functions ==========================================================================
 
 const getItems = (searchTerm) => {
-  return API.get('tba21', 'items')
+
+  let request = {
+    url: 'https://tba21-api.acrossthecloud.net/items',
+    headers: {
+      'content-type': 'application/json'
+    }
+  }
+
+  let signedRequest = aws4.sign(request);
+
+  axios(signedRequest)
     .then((response) => { // tslint:disable-line: no-any
       const result = response.Items.filter(
         item => {
@@ -279,7 +276,16 @@ const getItems = (searchTerm) => {
 };
 
 const getPeople = (searchTerm) => {
-  API.get('tba21', 'items')
+  let request = {
+    url: 'https://tba21-api.acrossthecloud.net/people',
+    headers: {
+      'content-type': 'application/json'
+    }
+  }
+
+  let signedRequest = aws4.sign(request);
+
+  axios(signedRequest)
     .then((response) => { // tslint:disable-line: no-any
       const result = response.Items.filter(
         item => {

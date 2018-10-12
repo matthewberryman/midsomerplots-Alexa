@@ -11,8 +11,10 @@
   "dependencies": {
     "ask-sdk-core": "^2.1.0",
     "ask-sdk-model": "^1.7.1",
-    "aws-amplify": "^1.1.4",
+    "aws4": "^1.8.0",
+    "axios": "^0.18.0",
     "i18next": "^11.9.1",
-    "i18next-sprintf-postprocessor": "^0.2.2"
+    "i18next-sprintf-postprocessor": "^0.2.2",
+    "node-fetch": "^2.2.0"
   }
 }

@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   s3: {
     REGION: "eu-west-1",
     BUCKET: "tba21-content"

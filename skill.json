@@ -5,9 +5,9 @@
         "en-US": {
           "summary": "Query the TBA21 Academy OceAnarchive.",
           "examplePhrases": [
-            "Alexa open ocean archive",
-            "Alexa ask ocean archive to search items for",
-            "Alexa ask ocean archive to search people for"
+            "Alexa open archive",
+            "Alexa ask archive to search items for",
+            "Alexa ask archive to search people for"
           ],
           "name": "TBA21 Academy OceAnarchive",
           "description": "Query the TBA21 Academy OceAnarchive."
