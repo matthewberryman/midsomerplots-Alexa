@@ -42,7 +42,6 @@
           "name": "AMAZON.NoIntent",
           "samples": []
         },
-
         {
           "name": "AMAZON.HelpIntent",
           "samples": []
