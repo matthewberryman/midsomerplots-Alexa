@@ -1,13 +1,13 @@
 {
-  "skillManifest": {
+  "manifest": {
     "publishingInformation": {
       "locales": {
         "en-US": {
           "summary": "Query the TBA21 Academy OceAnarchive.",
           "examplePhrases": [
             "Alexa open ocean archive",
-            "Alexa search ocean archive for items",
-            "Alexa search ocean archive for people"
+            "Alexa ask ocean archive to search items for",
+            "Alexa ask ocean archive to search people for"
           ],
           "name": "TBA21 Academy OceAnarchive",
           "description": "Query the TBA21 Academy OceAnarchive."
@@ -25,6 +25,6 @@
         }
       }
     },
-    "manifestVersion": "0.9"
+    "manifestVersion": "1.0"
   }
 }

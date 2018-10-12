@@ -240,7 +240,7 @@ const languageStrings = {
     en: {
         translation: {
             WELCOME: 'Welcome to the Ocean Archive!',
-            HELP: 'Say about, to hear more about the archive, or search items for, followed by a keyword to search items, or similarly to search people, say search people for, followed by a keyword.',
+            HELP: 'Say about, or say Alexa ask ocean archive to search people for keyword, or say Alexa ask ocean archive to search items for keyword.',
             ABOUT: 'The Ocean Archive is an archive of ocean artefacts developed by the TBA21 Academy in collaboration with USER Group and Across the Cloud.',
             STOP: 'Okay, see you next time!',
         },

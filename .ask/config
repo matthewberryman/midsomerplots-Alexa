@@ -4,11 +4,11 @@
       "skill_id": "",
       "was_cloned": false,
       "merge": {
-        "skillManifest": {
+        "manifest": {
           "apis": {
             "custom": {
               "endpoint": {
-                "uri": "ask-custom-city-guide-default"
+                "uri": "tba21-ocean-archive"
               }
             }
           }
