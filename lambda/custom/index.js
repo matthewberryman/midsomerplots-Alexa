@@ -60,7 +60,7 @@ const ItemsHandler = {
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
 
-        return request.type === 'IntentRequest' && request.intent.name === 'ItemIntent';
+        return request.type === 'IntentRequest' && request.intent.name === 'ItemsIntent';
     },
     handle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
@@ -93,7 +93,7 @@ const PeopleHandler = {
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
 
-        return request.type === 'IntentRequest' && request.intent.name === 'ItemIntent';
+        return request.type === 'IntentRequest' && request.intent.name === 'PeopleIntent';
     },
     handle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;

@@ -11,6 +11,26 @@
           ],
           "name": "TBA21 Academy OceAnarchive",
           "description": "Query the TBA21 Academy OceAnarchive."
+        },
+        "en-AU": {
+          "summary": "Query the TBA21 Academy OceAnarchive.",
+          "examplePhrases": [
+            "Alexa open archive",
+            "Alexa ask archive to search items for",
+            "Alexa ask archive to search people for"
+          ],
+          "name": "TBA21 Academy OceAnarchive",
+          "description": "Query the TBA21 Academy OceAnarchive."
+        },
+        "en-GB": {
+          "summary": "Query the TBA21 Academy OceAnarchive.",
+          "examplePhrases": [
+            "Alexa open archive",
+            "Alexa ask archive to search items for",
+            "Alexa ask archive to search people for"
+          ],
+          "name": "TBA21 Academy OceAnarchive",
+          "description": "Query the TBA21 Academy OceAnarchive."
         }
       },
       "isAvailableWorldwide": true,

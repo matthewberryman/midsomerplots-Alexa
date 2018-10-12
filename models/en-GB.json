@@ -11,9 +11,9 @@
           "slots": []
         },
         {
-          "name": "ItemIntent",
+          "name": "ItemsIntent",
           "samples": [
-            "search items for {keyword}"
+            "to search items for {keyword}"
           ],
           "slots": [
             {
@@ -23,9 +23,9 @@
           ]
         },
         {
-          "name": "PersonIntent",
+          "name": "PeopleIntent",
           "samples": [
-            "search people for {keyword}"
+            "to search people for {keyword}"
           ],
           "slots": [
             {
