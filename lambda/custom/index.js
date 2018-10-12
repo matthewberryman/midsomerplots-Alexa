@@ -62,64 +62,62 @@ const ItemsHandler = {
 
         return request.type === 'IntentRequest' && request.intent.name === 'ItemsIntent';
     },
-    handle(handlerInput) {
+    handle: async (handlerInput) => {
         console.log('running items handler');
         const request = handlerInput.requestEnvelope.request;
         const responseBuilder = handlerInput.responseBuilder;
 
-        let searchTerm = '';
+        let term = '';
         if (request.intent.slots.keyword.value && request.intent.slots.keyword.value !== "?") {
-            searchTerm = request.intent.slots.keyword.value;
+            term = request.intent.slots.keyword.value;
         }
-        console.log('searching for ' + searchTerm);
+        console.log('searching for ' + term);
 
-        const result = searchItems(searchTerm);
+        const APIrequest = {
+          host: 'iqjxgvlpn4.execute-api.eu-central-1.amazonaws.com',
+          method: 'GET',
+          url: 'https://iqjxgvlpn4.execute-api.eu-central-1.amazonaws.com/prod/items',
+          path: '/prod/items',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
 
+        let signedRequest = aws4.sign(APIrequest);
+
+        delete signedRequest.headers['Host'];
+        delete signedRequest.headers['Content-Length'];
+
+
+        let response = await axios(signedRequest);
+        let result = response.data.Items.filter(
+              item => {
+                if (item.ocean.toLowerCase().includes(term.toLowerCase())) {
+                  return true;
+                } else if (item.description.toLowerCase().includes(term.toLowerCase())) {
+                  return true;
+                } else if (item.tags.toString().toLowerCase().includes(term.toLowerCase())) {
+                  return true;
+                } else if (item.people.map(person => person.personName + person.roles.toString()).toString().toLowerCase().includes(term)) {
+                  return true;
+                } else {
+                  return false;
+                }
+              }
+            );
         let speechOutput = '';
 
-        if (result.Items.length===0) {
+        if (result.length===0) {
           speechOutput = 'Sorry, no matching items found.';
         } else {
           speechOutput = 'I found these matching items. ';
-          for (let idx = 0; idx < result.Items.length; idx++) {
-            speechOutput += `Item ${idx+1} is ${result.Items[idx].description} located in the ${result.Items[idx].ocean} ocean.`;
+          for (let idx = 0; idx < result.length; idx++) {
+            speechOutput += `Item ${idx+1} is ${result[idx].description} located in the ${result[idx].ocean} ocean, tagged with ${result[idx].tags}. `;
           }
 
         }
-
         return responseBuilder.speak(speechOutput).getResponse();
-    },
-};
-
-const PeopleHandler = {
-    canHandle(handlerInput) {
-        const request = handlerInput.requestEnvelope.request;
-
-        return request.type === 'IntentRequest' && request.intent.name === 'PeopleIntent';
-    },
-    handle(handlerInput) {
-        const request = handlerInput.requestEnvelope.request;
-        const responseBuilder = handlerInput.responseBuilder;
-
-        let searchTerm = '';
-        if (request.intent.slots.keyword.value && request.intent.slots.keyword.value !== "?") {
-            searchTerm = request.intent.slots.keyword.value;
-        }
-
-        const result = searchItems(searchTerm);
-
-        let speechOutput = '';
-
-        if (result.Items.length===0) {
-          speechOutput = 'Sorry, no matching people found.';
-        } else {
-          speechOutput = 'I found these matching people. ';
-          for (let idx = 0; idx < result.Items.length; idx++) {
-            speechOutput += `Person ${idx+1} is ${result.Items[idx].name} and has biography as follows. ${result.Items[idx].biography}.`;
-          }
-        }
-        return responseBuilder.speak(speechOutput).getResponse();
-    },
+    }
 };
 
 const HelpHandler = {
@@ -243,69 +241,6 @@ const FALLBACK_REPROMPT = 'What can I help you with?';
 
 // 3. Helper Functions ==========================================================================
 
-const searchItems = (searchTerm) => {
-
-  let request = {
-    url: 'https://tba21-api.acrossthecloud.net/items',
-    headers: {
-      'content-type': 'application/json'
-    }
-  }
-
-  let signedRequest = aws4.sign(request);
-
-  axios(signedRequest)
-    .then((response) => { // tslint:disable-line: no-any
-      const result = response.Items.filter(
-        item => {
-          if (item.ocean.toLowerCase().includes(term)) {
-            return true;
-          } else if (item.description.toLowerCase().includes(term)) {
-            return true;
-          } else if (item.tags.toString().toLowerCase().includes(term)) {
-            return true;
-          } else if (item.people.map(person => person.personName + person.roles.toString()).toString().toLowerCase().includes(term)) {
-            return true;
-          } else {
-            return false;
-          }
-        }
-      );
-      return result;
-    }).catch((e) => {
-      console.log(e);
-    });
-};
-
-const searchPeople = (searchTerm) => {
-  let request = {
-    url: 'https://tba21-api.acrossthecloud.net/people',
-    headers: {
-      'content-type': 'application/json'
-    }
-  }
-
-  let signedRequest = aws4.sign(request);
-
-  axios(signedRequest)
-    .then((response) => { // tslint:disable-line: no-any
-      console.log(response);
-      const result = response.Items.filter(
-        item => {
-          if (item.name.toLowerCase().includes(term.toLowerCase())) {
-            return true;
-          } else if (item.biography.toLowerCase().includes(term.toLowerCase())) {
-            return true;
-          } else {
-            return false;
-          }
-        }
-      );
-      return result;
-    }).catch((e) => {
-      console.log(e);
-    });
-};
 
 const LocalizationInterceptor = {
     process(handlerInput) {

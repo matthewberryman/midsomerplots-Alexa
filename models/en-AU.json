@@ -4,18 +4,12 @@
       "invocationName": "archive",
       "intents": [
         {
-          "name": "AboutIntent",
-          "samples": [
-            "about"
-          ],
-          "slots": []
-        },
-        {
           "name": "ItemsIntent",
           "samples": [
             "search items for {keyword}",
             "search for {keyword}",
-            "look for {keyword}"
+            "look for {keyword}",
+            "find {keyword}"
           ],
           "slots": [
             {
@@ -23,6 +17,13 @@
               "type": "AMAZON.SearchQuery"
             }
           ]
+        },
+        {
+          "name": "AboutIntent",
+          "samples": [
+            "about"
+          ],
+          "slots": []
         },
         {
           "name": "AMAZON.YesIntent",
