@@ -3,39 +3,36 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Query the TBA21 Academy OceAnarchive.",
+          "summary": "Get a randomly generated Midsomer Murder plot.",
           "examplePhrases": [
-            "Alexa open archive",
-            "Alexa ask archive to search items for",
-            "Alexa ask archive to search people for"
+            "Alexa open midsomerbot",
+            "Alexa ask midsomerbot for a plot"
           ],
-          "name": "TBA21 Academy OceAnarchive",
-          "description": "Query the TBA21 Academy OceAnarchive."
+          "name": "Midsomer Murders Bot",
+          "description": "Midsomer Murders random plot generator."
         },
         "en-AU": {
-          "summary": "Query the TBA21 Academy OceAnarchive.",
+          "summary": "Get a randomly generated Midsomer Murder plot.",
           "examplePhrases": [
-            "Alexa open archive",
-            "Alexa ask archive to search items for",
-            "Alexa ask archive to search people for"
+            "Alexa open midsomerbot",
+            "Alexa ask midsomerbot for a plot"
           ],
-          "name": "TBA21 Academy OceAnarchive",
-          "description": "Query the TBA21 Academy OceAnarchive."
+          "name": "Midsomer Murders Bot",
+          "description": "Midsomer Murders random plot generator."
         },
         "en-GB": {
-          "summary": "Query the TBA21 Academy OceAnarchive.",
+          "summary": "Get a randomly generated Midsomer Murder plot.",
           "examplePhrases": [
-            "Alexa open archive",
-            "Alexa ask archive to search items for",
-            "Alexa ask archive to search people for"
+            "Alexa open midsomerbot",
+            "Alexa ask midsomerbot for a plot"
           ],
-          "name": "TBA21 Academy OceAnarchive",
-          "description": "Query the TBA21 Academy OceAnarchive."
+          "name": "Midsomer Murders Bot",
+          "description": "Midsomer Murders random plot generator."
         }
       },
       "isAvailableWorldwide": true,
-      "testingInstructions": "Sample Testing Instructions.",
-      "category": "EDUCATION_AND_REFERENCE",
+      "testingInstructions": "Alexa ask midsomerbot for a plot",
+      "category": "MOVIE_AND_TV_KNOWLEDGE_AND_TRIVIA",
       "distributionCountries": []
     },
     "apis": {

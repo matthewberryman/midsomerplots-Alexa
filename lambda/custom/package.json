@@ -1,5 +1,5 @@
 {
-  "name": "oceanarchive",
+  "name": "midsomerplots-alexa",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,10 +11,9 @@
   "dependencies": {
     "ask-sdk-core": "^2.1.0",
     "ask-sdk-model": "^1.7.1",
-    "aws4": "^1.8.0",
-    "axios": "^0.18.0",
     "i18next": "^11.9.1",
     "i18next-sprintf-postprocessor": "^0.2.2",
+    "mersenne-twister": "^1.1.0",
     "node-fetch": "^2.2.0"
   }
 }

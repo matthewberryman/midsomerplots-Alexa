@@ -13,8 +13,7 @@
 const Alexa = require('ask-sdk-core');
 const i18n = require('i18next');
 const sprintf = require('i18next-sprintf-postprocessor');
-const axios = require('axios');
-const aws4 = require('aws4');
+const generator = require('./generator');
 
 // 1. Handlers ===================================================================================
 
@@ -56,67 +55,15 @@ const AboutHandler = {
 };
 
 
-const ItemsHandler = {
+const PlotHandler = {
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
 
-        return request.type === 'IntentRequest' && request.intent.name === 'ItemsIntent';
+        return request.type === 'IntentRequest' && request.intent.name === 'PlotIntent';
     },
-    handle: async (handlerInput) => {
-        console.log('running items handler');
-        const request = handlerInput.requestEnvelope.request;
+    handle: (handlerInput) => {
         const responseBuilder = handlerInput.responseBuilder;
-
-        let term = '';
-        if (request.intent.slots.keyword.value && request.intent.slots.keyword.value !== "?") {
-            term = request.intent.slots.keyword.value;
-        }
-        console.log('searching for ' + term);
-
-        const APIrequest = {
-          host: 'iqjxgvlpn4.execute-api.eu-central-1.amazonaws.com',
-          method: 'GET',
-          url: 'https://iqjxgvlpn4.execute-api.eu-central-1.amazonaws.com/prod/items',
-          path: '/prod/items',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }
-
-        let signedRequest = aws4.sign(APIrequest);
-
-        delete signedRequest.headers['Host'];
-        delete signedRequest.headers['Content-Length'];
-
-
-        let response = await axios(signedRequest);
-        let result = response.data.Items.filter(
-              item => {
-                if (item.ocean.toLowerCase().includes(term.toLowerCase())) {
-                  return true;
-                } else if (item.description.toLowerCase().includes(term.toLowerCase())) {
-                  return true;
-                } else if (item.tags.toString().toLowerCase().includes(term.toLowerCase())) {
-                  return true;
-                } else if (item.people.map(person => person.personName + person.roles.toString()).toString().toLowerCase().includes(term)) {
-                  return true;
-                } else {
-                  return false;
-                }
-              }
-            );
-        let speechOutput = '';
-
-        if (result.length===0) {
-          speechOutput = 'Sorry, no matching items found.';
-        } else {
-          speechOutput = 'I found these matching items. ';
-          for (let idx = 0; idx < result.length; idx++) {
-            speechOutput += `Item ${idx+1} is ${result[idx].description} located in the ${result[idx].ocean} ocean, tagged with ${result[idx].tags}. `;
-          }
-
-        }
-        return responseBuilder.speak(speechOutput).getResponse();
+        return responseBuilder.speak(generator.generate(Math.round((new Date()).getTime()/1000))).getResponse();
     }
 };
 
@@ -226,18 +173,16 @@ const FallbackHandler = {
 const languageStrings = {
     en: {
         translation: {
-            WELCOME: 'Welcome to the Ocean Archive!',
-            HELP: 'Ask Alexa about the archive, or say Alexa ask archive to search items for keyword.',
-            ABOUT: 'The Ocean Archive is an archive of ocean artefacts developed by the TBA21 Academy in collaboration with USER Group and Across the Cloud.',
+            WELCOME: 'Welcome to the Midsomer Murders Bot!',
+            HELP: 'To use this bot you can say Alexa, ask MidsomerBot for a new plot.',
+            ABOUT: 'The Midsomer Murders Bot was developed by Drs Patrick Stokes and Matthew Berryman.',
             STOP: 'Okay, see you next time!',
         },
     }
 };
 
-const SKILL_NAME = 'archive';
-const FALLBACK_MESSAGE = `The ${SKILL_NAME} can\'t help you with that.  You can ask me to search for people and items in the archive. What can I help you with?`;
-const FALLBACK_REPROMPT = 'What can I help you with?';
-
+const SKILL_NAME = 'midsomerbot';
+const FALLBACK_MESSAGE = `The ${SKILL_NAME} can\'t help you with that.  You can ask me for a new plot, if you dare.`;
 
 // 3. Helper Functions ==========================================================================
 
@@ -265,7 +210,7 @@ exports.handler = skillBuilder
     .addRequestHandlers(
         LaunchHandler,
         AboutHandler,
-        ItemsHandler,
+        PlotHandler,
         HelpHandler,
         StopHandler,
         FallbackHandler,
