@@ -175,7 +175,7 @@ const languageStrings = {
         translation: {
             WELCOME: 'Welcome to the Midsomer Murders Bot!',
             HELP: 'To use this bot you can say Alexa, ask MidsomerBot for a new plot.',
-            ABOUT: 'The Midsomer Murders Bot was developed by Drs Patrick Stokes and Matthew Berryman.',
+            ABOUT: 'The Midsomer Murders Bot was developed by Patrick Stokes and Matthew Berryman.',
             STOP: 'Okay, see you next time!',
         },
     }
