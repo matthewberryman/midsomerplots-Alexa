@@ -14,6 +14,7 @@
     "i18next": "^11.9.1",
     "i18next-sprintf-postprocessor": "^0.2.2",
     "mersenne-twister": "^1.1.0",
+    "midsomermurderplots": "github:matthewberryman/midsomerplots-content",
     "node-fetch": "^2.2.0"
   }
 }

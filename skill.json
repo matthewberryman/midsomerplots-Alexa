@@ -8,8 +8,14 @@
             "Alexa open midsomerbot",
             "Alexa ask midsomerbot for a plot"
           ],
+          "keywords": [
+            "midsomer",
+            "murders"
+          ],
           "name": "Midsomer Murders Bot",
-          "description": "Midsomer Murders random plot generator."
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/cfec/b31db2029e3d4e71942853c1e51fb681/APP_ICON?versionId=XtKV0snUHPu35Pkes9eufvCznQNDhAIl&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539909950&Signature=4squG%2FiC8kFLKQWRFRBXofL9LEs%3D",
+          "description": "Midsomer Murders random plot generator.",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/9f55/3db7658a72c144bfbb246d9bda67ac6b/APP_ICON_LARGE?versionId=2ffiO4XFOBRYLHC66DdQrnDknnSKkJoe&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539909950&Signature=2Ip9eAJX0MLXZ0nEAa7iZ9vUrYI%3D"
         },
         "en-AU": {
           "summary": "Get a randomly generated Midsomer Murder plot.",
@@ -17,8 +23,14 @@
             "Alexa open midsomerbot",
             "Alexa ask midsomerbot for a plot"
           ],
+          "keywords": [
+            "midsomer",
+            "murders"
+          ],
           "name": "Midsomer Murders Bot",
-          "description": "Midsomer Murders random plot generator."
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/6306/e9beb369e8a042d88764a1a542ef7200/APP_ICON?versionId=ZLgowmkMPbhx7xeS_PGZiSi754P5XCVm&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539909950&Signature=%2BMkjiPviyy39rTbsuEsIejrBcFQ%3D",
+          "description": "Midsomer Murders random plot generator.",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/ac02/cfd0e945d94b4f7a87bbabbf011539be/APP_ICON_LARGE?versionId=rxXT16cysAXOD9KcUqbTmqBlBAk44t2y&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539909950&Signature=p6r6vjeJsUnrynup%2BSW%2BNSVWEu0%3D"
         },
         "en-GB": {
           "summary": "Get a randomly generated Midsomer Murder plot.",
@@ -26,8 +38,14 @@
             "Alexa open midsomerbot",
             "Alexa ask midsomerbot for a plot"
           ],
+          "keywords": [
+            "midsomer",
+            "murder"
+          ],
           "name": "Midsomer Murders Bot",
-          "description": "Midsomer Murders random plot generator."
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/2703/5f33f33d97b84b50b9c3d040dfec9099/APP_ICON?versionId=qBCWYqPh0taW4P7E3eNxB3rn6EnfrTWH&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539909950&Signature=spyShIFssB%2FISwEI1He3yPFVlq4%3D",
+          "description": "Midsomer Murders random plot generator.",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/71e4/5c9f4017c5f44f418714e2df010e41ef/APP_ICON_LARGE?versionId=7UcI82xH_.ifIfKo5OezzL0NXQlVYjO6&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539909950&Signature=dZf6ncyIeevDfVP6b2g1vaAIvM0%3D"
         }
       },
       "isAvailableWorldwide": true,
@@ -42,6 +60,27 @@
         }
       }
     },
-    "manifestVersion": "1.0"
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-US": {
+          "termsOfUseUrl": "https://github.com/matthewberryman/midsomerplots-Alexa",
+          "privacyPolicyUrl": "https://github.com/matthewberryman/midsomerplots-Alexa"
+        },
+        "en-AU": {
+          "termsOfUseUrl": "https://github.com/matthewberryman/midsomerplots-Alexa",
+          "privacyPolicyUrl": "https://github.com/matthewberryman/midsomerplots-Alexa"
+        },
+        "en-GB": {
+          "termsOfUseUrl": "https://github.com/matthewberryman/midsomerplots-Alexa",
+          "privacyPolicyUrl": "https://github.com/matthewberryman/midsomerplots-Alexa"
+        }
+      },
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
   }
 }
