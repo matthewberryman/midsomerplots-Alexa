@@ -6,10 +6,9 @@
         {
           "name": "PlotIntent",
           "samples": [
-            "new plot",
-            "plot",
-            "story",
-            "murder"
+            "a new plot",
+            "a plot",
+            "a murder"
           ]
         },
         {
