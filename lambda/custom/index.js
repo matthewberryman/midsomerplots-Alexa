@@ -174,14 +174,14 @@ const languageStrings = {
     en: {
         translation: {
             WELCOME: 'Welcome to the Midsomer Murders Bot!',
-            HELP: 'To use this bot you can say Alexa, ask MidsomerBot for a new plot.',
+            HELP: 'To use this bot you can say Alexa, ask Midsomer bot for a new plot.',
             ABOUT: 'The Midsomer Murders Bot was developed by Patrick Stokes and Matthew Berryman.',
             STOP: 'Okay, see you next time!',
         },
     }
 };
 
-const SKILL_NAME = 'midsomerbot';
+const SKILL_NAME = 'midsomer bot';
 const FALLBACK_MESSAGE = `The ${SKILL_NAME} can\'t help you with that.  You can ask me for a new plot, if you dare.`;
 
 // 3. Helper Functions ==========================================================================

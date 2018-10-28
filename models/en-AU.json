@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "midsomerbot",
+      "invocationName": "midsomer bot",
       "intents": [
         {
           "name": "PlotIntent",
