@@ -13,7 +13,8 @@
 const Alexa = require('ask-sdk-core');
 const i18n = require('i18next');
 const sprintf = require('i18next-sprintf-postprocessor');
-const midsomermurderplots = require('midsomermurderplots');
+const aws4 = require('aws4');
+const axios = require('axios');
 
 // 1. Handlers ===================================================================================
 
@@ -61,9 +62,27 @@ const PlotHandler = {
 
         return request.type === 'IntentRequest' && request.intent.name === 'PlotIntent';
     },
-    handle: (handlerInput) => {
+    handle: async (handlerInput) => {
         const responseBuilder = handlerInput.responseBuilder;
-        return responseBuilder.speak(midsomermurderplots.generate(Math.round((new Date()).getTime()/1000))).getResponse();
+        const APIrequest = {
+            host: 'xn1xckyj5f.execute-api.us-east-1.amazonaws.com',
+            method: 'GET',
+            url: 'https://xn1xckyj5f.execute-api.us-east-1.amazonaws.com/prod/plot',
+            path: '/prod/plot',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        }
+  
+        let signedRequest = aws4.sign(APIrequest);
+
+        delete signedRequest.headers['Host'];
+        delete signedRequest.headers['Content-Length'];
+
+
+        let response = await axios(signedRequest);
+        console.log(response);
+        return responseBuilder.speak(response.data.plot).getResponse();
     }
 };
 

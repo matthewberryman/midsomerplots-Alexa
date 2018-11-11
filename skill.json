@@ -5,8 +5,8 @@
         "en-US": {
           "summary": "Get a randomly generated Midsomer Murder plot.",
           "examplePhrases": [
-            "Alexa open Midsomer bot",
-            "Alexa ask Midsomer bot for a plot"
+            "Alexa, open Midsomer bot",
+            "Alexa, ask Midsomer bot for a plot"
           ],
           "keywords": [
             "midsomer",
@@ -20,8 +20,8 @@
         "en-AU": {
           "summary": "Get a randomly generated Midsomer Murder plot.",
           "examplePhrases": [
-            "Alexa open Midsomer bot",
-            "Alexa ask Midsomer bot for a plot"
+            "Alexa, open Midsomer bot",
+            "Alexa, ask Midsomer bot for a plot"
           ],
           "keywords": [
             "midsomer",
@@ -35,8 +35,8 @@
         "en-GB": {
           "summary": "Get a randomly generated Midsomer Murder plot.",
           "examplePhrases": [
-            "Alexa open Midsomer bot",
-            "Alexa ask Midsomer bot for a plot"
+            "Alexa, open Midsomer bot",
+            "Alexa, ask Midsomer bot for a plot"
           ],
           "keywords": [
             "midsomer",
